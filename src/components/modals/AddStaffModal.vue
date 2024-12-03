@@ -9,9 +9,9 @@
         @closed="clearForm"
     >
         <div class="add-staff-modal__form">
-            <el-input v-model="form.lastName" placeholder="Фамилия" />
-            <el-input v-model="form.firstName" placeholder="Имя" />
-            <el-input v-model="form.middleName" placeholder="Отчество" />
+            <el-input v-model="form.lastName" placeholder="Фамилия" :formatter="formatInput" />
+            <el-input v-model="form.firstName" placeholder="Имя" :formatter="formatInput" />
+            <el-input v-model="form.middleName" placeholder="Отчество" :formatter="formatInput" />
 
             <el-select v-model="form.department" placeholder="Выберите отделение">
                 <el-option v-for="item in departmentsOptions" :key="item.value" :label="item.label" :value="item.value">
@@ -128,6 +128,10 @@ const staffTypeConfig = {
         additionalFields: [],
     },
 };
+
+function formatInput(value: string) {
+    return value.replace(/[^a-zA-Zа-яА-ЯёЁ\-]/g, '');
+}
 </script>
 
 <style scoped>

@@ -1,39 +1,31 @@
-# .
+## Тестовое задание для W2W
 
-This template should help get you started developing with Vue 3 in Vite.
+На должность Frontend-разработчик.  
+Выполнил Алексей Зотин.
 
-## Recommended IDE Setup
+## Стек технологий
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+• Vue 3, Pinia, Vue Router  
+• TypeScript / JavaScript  
+• HTML / SCSS  
+• Element Plus
 
-## Type Support for `.vue` Imports in TS
+## Задеплоенный проект
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+[Ссылка на задеплоенный проект](https://w2w-test-task.vercel.app/)
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
+## Установка и запуск
 
 ```sh
-npm run dev
+npm i
 ```
-
-### Type-Check, Compile and Minify for Production
 
 ```sh
-npm run build
+vite
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## Контакты
 
-```sh
-npm run lint
-```
+Telegram: AlekseyZotin  
+al.zotin@mail.ru
+
