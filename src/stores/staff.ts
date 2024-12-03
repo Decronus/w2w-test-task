@@ -58,7 +58,7 @@ export const useStaffStore = defineStore('staff', () => {
             lastName: 'Новиков',
             middleName: 'Анатольевич',
             department: 'кардиология',
-            isHead: false,
+            isHead: true,
         },
         {
             id: 8,
@@ -88,8 +88,11 @@ export const useStaffStore = defineStore('staff', () => {
 
     function addDoctor(doctor: Doctor) {
         if (doctor.isHead) {
-            const head = doctors.value.find((d) => d.isHead);
-            if (head) head.isHead = false;
+            const prevHead = doctors.value.find((d) => {
+                return d.isHead && d.department === doctor.department && d.id !== doctor.id;
+            });
+            if (!prevHead) return;
+            prevHead.isHead = false;
         }
         const maxId = doctors.value.reduce((max, d) => (d.id > max ? d.id : max), 0);
         doctors.value.unshift({ ...doctor, id: maxId + 1 });
@@ -97,8 +100,11 @@ export const useStaffStore = defineStore('staff', () => {
 
     function editDoctor(doctor: Doctor) {
         if (doctor.isHead) {
-            const head = doctors.value.find((d) => d.isHead);
-            if (head) head.isHead = false;
+            const prevHead = doctors.value.find((d) => {
+                return d.isHead && d.department === doctor.department && d.id !== doctor.id;
+            });
+            if (!prevHead) return;
+            prevHead.isHead = false;
         }
         const index = doctors.value.findIndex((d) => d.id === doctor.id);
         if (index === -1) return;
